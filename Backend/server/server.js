@@ -29,21 +29,26 @@ app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true, limit: "1mb" }));
 
 // CORS
-// ✅ CORS FIX (IMPORTANT 🔥)
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://parivartan-path-frontend.vercel.app",
-];
+const allowedOrigins = (process.env.CORS_ORIGIN || "")
+  .split(",")
+  .map((o) => o.trim())
+  .filter(Boolean);
 
 app.use(
   cors({
-    origin: allowedOrigins,
-    credentials: true,
-  })
-);
+    origin: (origin, cb) => {
+      if (!origin) return cb(null, true);
 
-// ✅ Handle preflight requests
-app.options("*", cors());
+      // allow all if "*"
+      if (allowedOrigins.includes("*")) return cb(null, true);
+
+      if (allowedOrigins.includes(origin)) return cb(null, true);
+
+      return cb(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+  }),
+);
 
 // Basic routes
 app.get("/api/health", (req, res) => {
