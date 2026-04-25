@@ -37,14 +37,17 @@ const allowedOrigins = (process.env.CORS_ORIGIN || "")
 app.use(
   cors({
     origin: (origin, cb) => {
-      // Allow non-browser clients (no Origin) and allow all in dev if not configured
       if (!origin) return cb(null, true);
-      if (process.env.NODE_ENV !== "production" && allowedOrigins.length === 0) return cb(null, true);
+
+      // allow all if "*"
+      if (allowedOrigins.includes("*")) return cb(null, true);
+
       if (allowedOrigins.includes(origin)) return cb(null, true);
+
       return cb(new Error("Not allowed by CORS"));
     },
     credentials: true,
-  })
+  }),
 );
 
 // Basic routes
