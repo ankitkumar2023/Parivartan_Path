@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Favicon - Update path to your company logo -->
+    <link rel="icon" type="image/jpeg" href="/Parivartan_path_logo.jpeg" />
+    <link rel="shortcut icon" href="/Parivartan_path_logo.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parivartan Path | Recovery • Care • Compassion</title>
+    <meta name="description" content="Parivartan Path - A modern drug rehabilitation center offering detox support, counseling, and long-term recovery programs." />
+    <meta name="theme-color" content="#1E3A8A" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Initialize theme from localStorage BEFORE React mounts to prevent flash
+      (function() {
+        try {
+          const theme = localStorage.getItem("theme");
+          if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        } catch (e) {
+          // If localStorage fails, use system preference
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.classList.add("dark");
+          }
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
