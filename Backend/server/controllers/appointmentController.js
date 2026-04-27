@@ -1,13 +1,16 @@
 import Appointment from "../models/Appointment.js";
+import { sendAppointmentEmails } from "../utils/sendEmail.js";
 
 /**
  * @route   POST /api/appointments
  * @access  Private (user)
+ * @desc    Create appointment and send confirmation emails
  */
 export async function createAppointment(req, res, next) {
   try {
     const { patientName, addictionType, appointmentDate, message } = req.body;
 
+    // Create appointment in database
     const appt = await Appointment.create({
       userId: req.user.id,
       patientName: patientName.trim(),
@@ -15,6 +18,17 @@ export async function createAppointment(req, res, next) {
       appointmentDate: new Date(appointmentDate),
       message: message?.trim(),
       status: "Pending",
+    });
+
+    // Send emails (admin notification + user confirmation)
+    // Non-blocking - emails sent asynchronously
+    sendAppointmentEmails({
+      patientName: appt.patientName,
+      userEmail: req.user.email,
+      addictionType: appt.addictionType,
+      appointmentDate: appt.appointmentDate,
+      message: appt.message,
+      appointmentId: appt._id.toString(),
     });
 
     res.status(201).json({ success: true, appointment: appt });
