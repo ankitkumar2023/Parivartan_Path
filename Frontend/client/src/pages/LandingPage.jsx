@@ -120,8 +120,9 @@ export default function LandingPage() {
                 transition={{ duration: 0.55, delay: 0.12 }}
                 className="mt-4 max-w-xl text-base leading-7 text-white/80"
               >
-                Parivartan Path provides structured programs, therapy, and aftercare support—helping patients and
-                families regain stability with dignity-first care.
+                Parivartan Path provides structured programs, therapy, and
+                aftercare support—helping patients and families regain stability
+                with dignity-first care.
               </motion.p>
 
               <motion.div
@@ -161,9 +162,12 @@ export default function LandingPage() {
             >
               <div className="rounded-3xl bg-white/10 p-5 ring-1 ring-white/15 shadow-lg shadow-black/20 backdrop-blur-xl">
                 <div className="rounded-3xl bg-white dark:bg-slate-800 p-7 shadow-lg shadow-black/5 ring-1 ring-black/5 dark:ring-slate-600/50">
-                  <p className="text-sm font-semibold text-blue-900 dark:text-blue-300">Quick Intake</p>
+                  <p className="text-sm font-semibold text-blue-900 dark:text-blue-300">
+                    Quick Intake
+                  </p>
                   <p className="mt-1 text-sm text-gray-600 dark:text-slate-300">
-                    Book an appointment in minutes. A specialist will follow up discreetly.
+                    Book an appointment in minutes. A specialist will follow up
+                    discreetly.
                   </p>
 
                   <div className="mt-5 grid gap-3">
@@ -171,8 +175,12 @@ export default function LandingPage() {
                       <div className="flex items-start gap-3">
                         <HeartHandshake className="mt-0.5 h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                         <div>
-                          <p className="text-sm font-semibold text-gray-900 dark:text-white">Family guidance</p>
-                          <p className="mt-1 text-xs text-gray-600 dark:text-slate-300">Support tools for caregivers and loved ones.</p>
+                          <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                            Family guidance
+                          </p>
+                          <p className="mt-1 text-xs text-gray-600 dark:text-slate-300">
+                            Support tools for caregivers and loved ones.
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -180,20 +188,30 @@ export default function LandingPage() {
                       <div className="flex items-start gap-3">
                         <ShieldPlus className="mt-0.5 h-5 w-5 text-blue-900 dark:text-blue-400" />
                         <div>
-                          <p className="text-sm font-semibold text-gray-900 dark:text-white">Clinical structure</p>
-                          <p className="mt-1 text-xs text-gray-600 dark:text-slate-300">Detox support, therapy, and aftercare planning.</p>
+                          <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                            Clinical structure
+                          </p>
+                          <p className="mt-1 text-xs text-gray-600 dark:text-slate-300">
+                            Detox support, therapy, and aftercare planning.
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-5 rounded-2xl bg-gray-900 px-4 py-4 shadow-lg shadow-black/20 ring-1 ring-white/10">
-                    <p className="text-xs font-semibold text-white/70">Need urgent help?</p>
+                    <p className="text-xs font-semibold text-white/70">
+                      Need urgent help?
+                    </p>
                     <p className="mt-1 text-sm font-semibold text-white">
-                      Call <span className="text-amber-300">+91 6204899258</span>
+                      Call{" "}
+                      <span className="text-amber-300">
+                        +91 9113193968 | +91 6204899258
+                      </span>
                     </p>
                     <p className="mt-1 text-xs text-white/65">
-                      If this is a medical emergency, contact local emergency services immediately.
+                      If this is a medical emergency, contact local emergency
+                      services immediately.
                     </p>
                   </div>
                 </div>
@@ -214,13 +232,15 @@ export default function LandingPage() {
           transition={{ duration: 0.45 }}
           className="max-w-2xl"
         >
-          <p className="text-sm font-semibold text-blue-900 dark:text-blue-300">Programs built for real life</p>
+          <p className="text-sm font-semibold text-blue-900 dark:text-blue-300">
+            Programs built for real life
+          </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
             Support that feels calm, structured, and human.
           </h2>
           <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-slate-300">
-            We combine clinical care with practical routines—helping patients and families reduce chaos and regain
-            stability.
+            We combine clinical care with practical routines—helping patients
+            and families reduce chaos and regain stability.
           </p>
         </motion.div>
 
@@ -254,10 +274,15 @@ export default function LandingPage() {
             className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between"
           >
             <div>
-              <p className="text-sm font-semibold text-blue-900 dark:text-blue-300">Success stories</p>
-              <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Recovery is possible.</h2>
+              <p className="text-sm font-semibold text-blue-900 dark:text-blue-300">
+                Success stories
+              </p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Recovery is possible.
+              </h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-gray-600 dark:text-slate-300">
-                Every journey is personal. Here are a few patient and family experiences shared with consent.
+                Every journey is personal. Here are a few patient and family
+                experiences shared with consent.
               </p>
             </div>
             <Link
@@ -289,11 +314,17 @@ export default function LandingPage() {
                     transition={{ duration: 0.35 }}
                     className="h-full rounded-3xl bg-white dark:bg-slate-800 p-6 shadow-lg shadow-black/5 ring-1 ring-black/5 dark:ring-slate-600/50"
                   >
-                    <p className="text-sm leading-6 text-gray-700 dark:text-slate-200">"{t.quote}"</p>
+                    <p className="text-sm leading-6 text-gray-700 dark:text-slate-200">
+                      "{t.quote}"
+                    </p>
                     <div className="mt-4 flex items-center justify-between">
                       <div>
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white">{t.name}</p>
-                        <p className="text-xs text-gray-500 dark:text-slate-400">{t.role}</p>
+                        <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                          {t.name}
+                        </p>
+                        <p className="text-xs text-gray-500 dark:text-slate-400">
+                          {t.role}
+                        </p>
                       </div>
                       <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-emerald-500/15">
                         {t.outcome}
