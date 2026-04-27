@@ -206,7 +206,7 @@ export default function LandingPage() {
                     <p className="mt-1 text-sm font-semibold text-white">
                       Call{" "}
                       <span className="text-amber-300">
-                        +91 9113193968 | +91 6204899258
+                        +91 9113193968 |  +91 6204899258
                       </span>
                     </p>
                     <p className="mt-1 text-xs text-white/65">
