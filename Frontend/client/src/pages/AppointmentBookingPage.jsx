@@ -39,7 +39,7 @@ export default function AppointmentBookingPage() {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-950 to-blue-900 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center px-4">
-        <div className="text-center text-white">
+        <div className="text-center text-blue-950 dark:text-white">
           <h1 className="text-3xl font-bold mb-4">Sign in Required</h1>
           <p className="text-lg mb-6">Please sign in to book an appointment.</p>
           <button
@@ -128,11 +128,11 @@ export default function AppointmentBookingPage() {
 
   if (success) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-950 to-blue-900 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center px-4">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="text-center text-white max-w-md"
+          className="text-center text-blue-950 dark:text-white max-w-md"
         >
           <div className="mb-4 inline-block p-4 bg-emerald-500/20 rounded-full">
             <svg

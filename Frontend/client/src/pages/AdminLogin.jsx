@@ -58,13 +58,17 @@ export default function AdminLogin() {
     <div className="mx-auto max-w-6xl px-4 py-12">
       <div className="mx-auto max-w-md overflow-hidden rounded-3xl bg-white dark:bg-slate-800 shadow-soft ring-1 ring-black/5 dark:ring-slate-700">
         {/* Header with admin badge */}
-        <div className="bg-gradient-to-r from-blue-950 to-blue-900 dark:from-slate-900 dark:to-slate-800 px-6 py-6 text-white">
+        <div className="bg-gradient-to-r from-blue-100 to-blue-50 dark:from-slate-900 dark:to-slate-800 px-6 py-6 text-blue-950 dark:text-white">
           <div className="flex items-center gap-2 mb-2">
-            <ShieldAlert className="h-5 w-5 text-amber-300" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-amber-300">Admin Portal</span>
+            <ShieldAlert className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
+              Admin Portal
+            </span>
           </div>
           <h1 className="text-xl font-semibold">Admin Login</h1>
-          <p className="mt-1 text-sm text-white/80">Secure access for administrators only</p>
+          <p className="mt-1 text-sm text-blue-900/80 dark:text-white/80">
+            Secure access for administrators only
+          </p>
         </div>
 
         <form onSubmit={onSubmit} className="px-6 py-6">
@@ -118,7 +122,9 @@ export default function AdminLogin() {
               <div className="w-full border-t border-slate-200 dark:border-slate-700"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400">Development</span>
+              <span className="px-2 bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+                Development
+              </span>
             </div>
           </div>
 
@@ -128,7 +134,9 @@ export default function AdminLogin() {
             onClick={() => setShowMockCredentials(!showMockCredentials)}
             className="mt-4 w-full rounded-xl border border-slate-300 dark:border-slate-600 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition"
           >
-            {showMockCredentials ? "Hide Test Credentials" : "View Test Credentials"}
+            {showMockCredentials
+              ? "Hide Test Credentials"
+              : "View Test Credentials"}
           </button>
 
           {showMockCredentials && (
@@ -139,11 +147,15 @@ export default function AdminLogin() {
               <div className="space-y-2 text-xs text-amber-800 dark:text-amber-200">
                 <div>
                   <span className="font-semibold">Email:</span>
-                  <code className="ml-2 bg-amber-100 dark:bg-amber-900/50 px-2 py-1 rounded">admin@parivartan.com</code>
+                  <code className="ml-2 bg-amber-100 dark:bg-amber-900/50 px-2 py-1 rounded">
+                    admin@parivartan.com
+                  </code>
                 </div>
                 <div>
                   <span className="font-semibold">Password:</span>
-                  <code className="ml-2 bg-amber-100 dark:bg-amber-900/50 px-2 py-1 rounded">Admin@123</code>
+                  <code className="ml-2 bg-amber-100 dark:bg-amber-900/50 px-2 py-1 rounded">
+                    Admin@123
+                  </code>
                 </div>
               </div>
               <button
@@ -159,7 +171,10 @@ export default function AdminLogin() {
           {/* Back to Regular Login */}
           <p className="mt-4 text-center text-sm text-slate-600 dark:text-slate-400">
             Not an admin?{" "}
-            <Link to="/login" className="font-semibold text-emerald-700 dark:text-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400">
+            <Link
+              to="/login"
+              className="font-semibold text-emerald-700 dark:text-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400"
+            >
               Regular Login
             </Link>
           </p>
@@ -168,7 +183,8 @@ export default function AdminLogin() {
         {/* Footer Info */}
         <div className="px-6 py-4 bg-slate-50 dark:bg-slate-700/40 border-t border-slate-200 dark:border-slate-600">
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            ⚠️ This portal is for authorized administrators only. All activities are logged and monitored.
+            ⚠️ This portal is for authorized administrators only. All activities
+            are logged and monitored.
           </p>
         </div>
       </div>

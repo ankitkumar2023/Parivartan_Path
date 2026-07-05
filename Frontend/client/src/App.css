@@ -4,19 +4,16 @@
 }
 
 body {
-  background-color: #ffffff;
-  color: #1e293b;
+  /* IMPORTANT: Do NOT set background-color or color here!
+       Let Tailwind handle all theme colors via the App.jsx wrapper component
+       that applies: bg-white dark:bg-slate-950 text-slate-900 dark:text-white
+       Setting these here overrides component-level Tailwind classes */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Dark mode */
 :root.dark {
   color-scheme: dark;
-}
-
-:root.dark body {
-  background-color: #0f172a;
-  color: #f1f5f9;
 }
 
 .counter {

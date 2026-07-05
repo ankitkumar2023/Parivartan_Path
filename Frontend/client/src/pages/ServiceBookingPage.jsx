@@ -80,13 +80,15 @@ export default function ServiceBookingPage() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-950 to-blue-900 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center px-4">
-        <div className="text-center text-white">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center px-4">
+        <div className="text-center text-blue-950 dark:text-white">
           <h1 className="text-3xl font-bold mb-4">Sign in Required</h1>
-          <p className="text-lg mb-6">Please sign in to book a service appointment.</p>
+          <p className="text-lg mb-6">
+            Please sign in to book a service appointment.
+          </p>
           <button
             onClick={() => navigate("/login")}
-            className="bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-lg font-semibold transition"
+            className="bg-emerald-500 hover:bg-emerald-600 px-6 py-3 rounded-lg font-semibold transition text-white"
           >
             Go to Login
           </button>

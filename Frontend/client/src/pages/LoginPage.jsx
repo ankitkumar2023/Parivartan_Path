@@ -33,9 +33,11 @@ export default function LoginPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <div className="mx-auto max-w-md overflow-hidden rounded-3xl bg-white dark:bg-slate-800 shadow-soft ring-1 ring-black/5 dark:ring-slate-700">
-        <div className="bg-gradient-to-r from-blue-950 to-blue-900 dark:from-slate-900 dark:to-slate-800 px-6 py-6 text-white">
+        <div className="bg-gradient-to-r from-blue-100 to-blue-50 dark:from-slate-900 dark:to-slate-800 px-6 py-6 text-blue-950 dark:text-white">
           <h1 className="text-xl font-semibold">Login</h1>
-          <p className="mt-1 text-sm text-white/80">Welcome back. Please sign in to continue.</p>
+          <p className="mt-1 text-sm text-blue-900/80 dark:text-white/80">
+            Welcome back. Please sign in to continue.
+          </p>
         </div>
 
         <form onSubmit={onSubmit} className="px-6 py-6">
@@ -79,7 +81,10 @@ export default function LoginPage() {
 
           <p className="mt-4 text-center text-sm text-slate-600 dark:text-slate-400">
             Don&apos;t have an account?{" "}
-            <Link to="/register" className="font-semibold text-emerald-700 dark:text-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400">
+            <Link
+              to="/register"
+              className="font-semibold text-emerald-700 dark:text-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400"
+            >
               Create one
             </Link>
           </p>

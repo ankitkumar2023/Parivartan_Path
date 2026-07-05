@@ -14,11 +14,23 @@ export function ThemeProvider({ children }) {
     if (typeof window === "undefined") return true;
     try {
       const stored = localStorage.getItem("theme");
+      console.log(
+        "[ThemeContext] Initializing theme from localStorage:",
+        stored,
+      );
       if (stored !== null) {
         return stored === "dark";
       }
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      console.log(
+        "[ThemeContext] Using system preference (dark):",
+        prefersDark,
+      );
+      return prefersDark;
     } catch {
+      console.error("[ThemeContext] Error reading theme from localStorage");
       return true;
     }
   });
@@ -29,24 +41,47 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     const htmlElement = document.documentElement;
 
+    console.log("[ThemeContext] Applying theme - isDark:", isDark);
+    console.log(
+      "[ThemeContext] HTML element classList before:",
+      htmlElement.className,
+    );
+
     if (isDark) {
       htmlElement.classList.add("dark");
+      console.log("[ThemeContext] Added 'dark' class to html element");
     } else {
       htmlElement.classList.remove("dark");
+      console.log("[ThemeContext] Removed 'dark' class from html element");
     }
+
+    console.log(
+      "[ThemeContext] HTML element classList after:",
+      htmlElement.className,
+    );
 
     // Persist theme preference to localStorage
     try {
       localStorage.setItem("theme", isDark ? "dark" : "light");
+      console.log(
+        "[ThemeContext] Saved theme to localStorage:",
+        isDark ? "dark" : "light",
+      );
     } catch (e) {
-      console.error("Failed to save theme to localStorage:", e);
+      console.error("[ThemeContext] Failed to save theme to localStorage:", e);
     }
   }, [isDark]);
 
   // Toggle theme and trigger update
   const toggleTheme = () => {
-    setIsDark((prev) => !prev);
+    console.log("[ThemeContext] Toggle clicked - current isDark:", isDark);
+    setIsDark((prev) => {
+      console.log("[ThemeContext] Toggle setting isDark to:", !prev);
+      return !prev;
+    });
   };
+
+  console.log("[ThemeContext] Rendering with isDark:", isDark);
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>

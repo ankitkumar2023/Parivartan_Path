@@ -98,7 +98,7 @@ export default function ContactPage() {
         />
       </Helmet>
 
-      <section className="bg-blue-950">
+      <section className="bg-blue-50 dark:bg-blue-950">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -106,11 +106,13 @@ export default function ContactPage() {
             transition={{ duration: 0.45 }}
             className="max-w-2xl"
           >
-            <p className="text-sm font-semibold text-amber-300">Contact</p>
-            <h1 className="mt-2 text-4xl font-bold tracking-tight text-white md:text-5xl">
-              We’re here—confidentially.
+            <p className="text-sm font-semibold text-amber-500 dark:text-amber-300">
+              Contact
+            </p>
+            <h1 className="mt-2 text-4xl font-bold tracking-tight text-blue-950 dark:text-white md:text-5xl">
+              We're here—confidentially.
             </h1>
-            <p className="mt-4 text-sm leading-7 text-white/80">
+            <p className="mt-4 text-sm leading-7 text-blue-900/70 dark:text-white/80">
               Share your details and a specialist will follow up discreetly. If
               this is a medical emergency, contact local emergency services
               immediately.

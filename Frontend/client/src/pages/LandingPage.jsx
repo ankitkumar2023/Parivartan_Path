@@ -83,11 +83,11 @@ export default function LandingPage() {
       </Helmet>
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-blue-950">
+      <section className="relative overflow-hidden bg-blue-50 dark:bg-blue-950">
         <div className="absolute inset-0">
-          <div className="absolute -left-24 -top-24 h-80 w-80 rounded-full bg-emerald-500/20 blur-3xl" />
-          <div className="absolute -right-24 top-12 h-80 w-80 rounded-full bg-amber-500/15 blur-3xl" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.10),transparent_45%),radial-gradient(circle_at_70%_30%,rgba(16,185,129,0.12),transparent_55%)]" />
+          <div className="absolute -left-24 -top-24 h-80 w-80 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 blur-3xl" />
+          <div className="absolute -right-24 top-12 h-80 w-80 rounded-full bg-amber-500/10 dark:bg-amber-500/15 blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(30,58,138,0.08),transparent_45%),radial-gradient(circle_at_70%_30%,rgba(30,58,138,0.06),transparent_55%)] dark:bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.10),transparent_45%),radial-gradient(circle_at_70%_30%,rgba(16,185,129,0.12),transparent_55%)]" />
         </div>
 
         <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-14 md:pb-24 md:pt-20">
@@ -97,9 +97,9 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45 }}
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold text-white ring-1 ring-white/15"
+                className="inline-flex items-center gap-2 rounded-full bg-blue-900/10 dark:bg-white/10 px-4 py-2 text-xs font-semibold text-blue-900 dark:text-white ring-1 ring-blue-900/15 dark:ring-white/15"
               >
-                <Sparkles className="h-4 w-4 text-amber-300" />
+                <Sparkles className="h-4 w-4 text-amber-500 dark:text-amber-300" />
                 Calm, confidential, and clinically guided recovery
               </motion.p>
 
@@ -107,18 +107,24 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.05 }}
-                className="mt-5 text-4xl font-bold tracking-tight text-white md:text-6xl"
+                className="mt-5 text-4xl font-bold tracking-tight text-blue-950 dark:text-white md:text-6xl"
               >
                 A safer path from{" "}
-                <span className="text-amber-300">addiction</span> to{" "}
-                <span className="text-emerald-300">recovery</span>.
+                <span className="text-amber-500 dark:text-amber-300">
+                  addiction
+                </span>{" "}
+                to{" "}
+                <span className="text-emerald-500 dark:text-emerald-300">
+                  recovery
+                </span>
+                .
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.12 }}
-                className="mt-4 max-w-xl text-base leading-7 text-white/80"
+                className="mt-4 max-w-xl text-base leading-7 text-blue-900/70 dark:text-white/80"
               >
                 Parivartan Path provides structured programs, therapy, and
                 aftercare support—helping patients and families regain stability
@@ -140,7 +146,7 @@ export default function LandingPage() {
                 </Link>
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center rounded-2xl bg-white/10 px-6 py-3.5 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/15"
+                  className="inline-flex items-center justify-center rounded-2xl bg-blue-900/10 dark:bg-white/10 px-6 py-3.5 text-sm font-semibold text-blue-900 dark:text-white ring-1 ring-blue-900/20 dark:ring-white/20 transition hover:bg-blue-900/15 dark:hover:bg-white/15"
                 >
                   Explore programs
                 </Link>
@@ -206,7 +212,7 @@ export default function LandingPage() {
                     <p className="mt-1 text-sm font-semibold text-white">
                       Call{" "}
                       <span className="text-amber-300">
-                        +91 9113193968 |  +91 6204899258
+                        +91 9113193968 | +91 6204899258
                       </span>
                     </p>
                     <p className="mt-1 text-xs text-white/65">

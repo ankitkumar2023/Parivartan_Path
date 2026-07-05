@@ -9,6 +9,8 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import authRoutes from "./routes/authRoutes.js";
 import appointmentRoutes from "./routes/appointmentRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
+import { testEmailSend } from "./routes/testEmailRoutes.js";
+import { verifySMTPConnection } from "./utils/sendEmail.js";
 
 dotenv.config();
 
@@ -65,6 +67,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/contact", contactRoutes);
 
+// Test email route (for debugging SMTP configuration)
+app.get("/api/test-email", testEmailSend);
+
 // 404 + error middleware
 app.use(notFound);
 app.use(errorHandler);
@@ -83,9 +88,24 @@ async function start() {
 
   await mongoose.connect(mongoUri);
 
+  // Verify SMTP configuration on startup
+  console.log("\n" + "=".repeat(60));
+  console.log("[STARTUP] Verifying SMTP configuration...");
+  console.log("=".repeat(60));
+  const smtpOk = await verifySMTPConnection();
+  if (!smtpOk) {
+    console.warn(
+      "⚠️  [STARTUP] SMTP verification failed. Emails may not work.",
+    );
+  }
+
   app.listen(PORT, () => {
     // eslint-disable-next-line no-console
-    console.log(`API running on port ${PORT} (${process.env.NODE_ENV || "development"})`);
+    console.log(
+      `\n✅ API running on port ${PORT} (${process.env.NODE_ENV || "development"})`,
+    );
+    console.log(`📧 Test email: GET /api/test-email`);
+    console.log("=".repeat(60) + "\n");
   });
 }
 

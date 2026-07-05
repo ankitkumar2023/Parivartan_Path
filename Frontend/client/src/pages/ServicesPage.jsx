@@ -125,7 +125,7 @@ export default function ServicesPage() {
         />
       </Helmet>
 
-      <section className="bg-blue-950 dark:bg-slate-900">
+      <section className="bg-blue-50 dark:bg-slate-900">
         <div className="mx-auto max-w-6xl px-4 py-14">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -133,13 +133,16 @@ export default function ServicesPage() {
             transition={{ duration: 0.45 }}
             className="max-w-2xl"
           >
-            <p className="text-sm font-semibold text-amber-300">Programs & Services</p>
-            <h1 className="mt-2 text-4xl font-bold tracking-tight text-white md:text-5xl">
+            <p className="text-sm font-semibold text-amber-500 dark:text-amber-300">
+              Programs & Services
+            </p>
+            <h1 className="mt-2 text-4xl font-bold tracking-tight text-blue-950 dark:text-white md:text-5xl">
               Clinical care with a calm, modern approach.
             </h1>
-            <p className="mt-4 text-sm leading-7 text-white/80">
-              Every patient is different. We design treatment plans that combine safety, structure, and emotional
-              support—helping patients rebuild routines and confidence.
+            <p className="mt-4 text-sm leading-7 text-blue-900/70 dark:text-white/80">
+              Every patient is different. We design treatment plans that combine
+              safety, structure, and emotional support—helping patients rebuild
+              routines and confidence.
             </p>
           </motion.div>
         </div>
@@ -176,7 +179,8 @@ export default function ServicesPage() {
               Ready to Start Your Recovery Journey?
             </h2>
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              Take the first step towards healing. Our compassionate team is here to support you every step of the way.
+              Take the first step towards healing. Our compassionate team is
+              here to support you every step of the way.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <button

@@ -74,7 +74,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50">
       {/* Premium glass backdrop */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-950/95 via-blue-950/75 to-transparent dark:from-slate-900/95 dark:via-slate-800/75" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-100/80 via-blue-50/60 to-transparent dark:from-slate-900/95 dark:via-slate-800/75" />
       <div className="absolute inset-0 -z-10 backdrop-blur-xl" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-20 bg-[radial-gradient(circle_at_35%_0%,rgba(16,185,129,0.18),transparent_60%),radial-gradient(circle_at_75%_10%,rgba(245,158,11,0.14),transparent_55%)]" />
 
@@ -90,8 +90,12 @@ export default function Navbar() {
               }}
             />
             <div className="leading-tight">
-              <p className="text-sm font-semibold tracking-wide text-white dark:text-slate-100">Parivartan Path</p>
-              <p className="text-[11px] text-white/70 dark:text-slate-300/70">Recovery • Care • Compassion</p>
+              <p className="text-sm font-semibold tracking-wide text-white dark:text-slate-100">
+                Parivartan Path
+              </p>
+              <p className="text-[11px] text-white/70 dark:text-slate-300/70">
+                Recovery • Care • Compassion
+              </p>
             </div>
           </Link>
 
@@ -102,7 +106,7 @@ export default function Navbar() {
                 {l.label}
               </NavItem>
             ))}
-            
+
             {isAuthenticated && (
               <NavLink
                 to="/book-appointment"
@@ -112,14 +116,14 @@ export default function Navbar() {
                     "rounded-xl px-3 py-2 text-sm font-medium transition",
                     isActive
                       ? "bg-emerald-500/20 text-emerald-100 ring-1 ring-emerald-400/30"
-                      : "text-white/80 hover:bg-emerald-500/10 hover:text-emerald-100"
+                      : "text-white/80 hover:bg-emerald-500/10 hover:text-emerald-100",
                   )
                 }
               >
                 📅 Book
               </NavLink>
             )}
-            
+
             <div className="mx-1 h-6 w-px bg-white/15 dark:bg-slate-400/15" />
 
             {!isAuthenticated ? (
@@ -137,7 +141,7 @@ export default function Navbar() {
                       "rounded-xl px-3 py-2 text-sm font-medium transition flex items-center gap-1",
                       isActive
                         ? "bg-amber-500/20 text-amber-100 ring-1 ring-amber-400/30"
-                        : "text-white/60 hover:bg-amber-500/10 hover:text-amber-100"
+                        : "text-white/60 hover:bg-amber-500/10 hover:text-amber-100",
                     )
                   }
                   title="Admin Portal"
@@ -146,19 +150,17 @@ export default function Navbar() {
                 </NavLink>
                 <div className="ml-2 flex items-center gap-2">
                   <button
-                    onClick={toggleTheme}
-                    title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-                    style={{
-                      padding: "8px 12px",
-                      borderRadius: "8px",
-                      backgroundColor: isDark ? "rgba(51, 65, 85, 0.3)" : "rgba(255, 255, 255, 0.15)",
-                      border: "1px solid " + (isDark ? "rgba(148, 163, 184, 0.2)" : "rgba(255, 255, 255, 0.2)"),
-                      color: "white",
-                      cursor: "pointer",
-                      fontSize: "14px",
-                      fontWeight: "500",
-                      transition: "all 0.2s ease",
+                    onClick={() => {
+                      console.log(
+                        "[Navbar] Theme toggle clicked - current isDark:",
+                        isDark,
+                      );
+                      toggleTheme();
                     }}
+                    title={
+                      isDark ? "Switch to light mode" : "Switch to dark mode"
+                    }
+                    className="rounded-xl bg-slate-600/30 dark:bg-slate-700/40 px-3 py-2 text-sm font-medium text-white transition hover:bg-slate-600/50 dark:hover:bg-slate-700/60 ring-1 ring-slate-400/20 dark:ring-slate-500/30"
                   >
                     {isDark ? "☀️" : "🌙"}
                   </button>
@@ -166,24 +168,24 @@ export default function Navbar() {
               </>
             ) : (
               <>
-                <NavItem to={role === "admin" ? "/admin-dashboard" : "/dashboard"}>
+                <NavItem
+                  to={role === "admin" ? "/admin-dashboard" : "/dashboard"}
+                >
                   {role === "admin" ? "Admin Dashboard" : "Dashboard"}
                 </NavItem>
                 <div className="ml-2 flex items-center gap-2">
                   <button
-                    onClick={toggleTheme}
-                    title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-                    style={{
-                      padding: "8px 12px",
-                      borderRadius: "8px",
-                      backgroundColor: isDark ? "rgba(51, 65, 85, 0.3)" : "rgba(255, 255, 255, 0.15)",
-                      border: "1px solid " + (isDark ? "rgba(148, 163, 184, 0.2)" : "rgba(255, 255, 255, 0.2)"),
-                      color: "white",
-                      cursor: "pointer",
-                      fontSize: "14px",
-                      fontWeight: "500",
-                      transition: "all 0.2s ease",
+                    onClick={() => {
+                      console.log(
+                        "[Navbar] Theme toggle clicked - current isDark:",
+                        isDark,
+                      );
+                      toggleTheme();
                     }}
+                    title={
+                      isDark ? "Switch to light mode" : "Switch to dark mode"
+                    }
+                    className="rounded-xl bg-slate-600/30 dark:bg-slate-700/40 px-3 py-2 text-sm font-medium text-white transition hover:bg-slate-600/50 dark:hover:bg-slate-700/60 ring-1 ring-slate-400/20 dark:ring-slate-500/30"
                   >
                     {isDark ? "☀️" : "🌙"}
                   </button>
@@ -229,19 +231,14 @@ export default function Navbar() {
 
                 <div className="mt-2 flex gap-2">
                   <button
-                    onClick={toggleTheme}
-                    style={{
-                      flex: 1,
-                      padding: "8px 12px",
-                      borderRadius: "8px",
-                      backgroundColor: isDark ? "rgba(51, 65, 85, 0.3)" : "rgba(255, 255, 255, 0.15)",
-                      border: "1px solid " + (isDark ? "rgba(148, 163, 184, 0.2)" : "rgba(255, 255, 255, 0.2)"),
-                      color: "white",
-                      cursor: "pointer",
-                      fontSize: "13px",
-                      fontWeight: "500",
-                      transition: "all 0.2s ease",
+                    onClick={() => {
+                      console.log(
+                        "[Navbar Mobile] Theme toggle clicked - current isDark:",
+                        isDark,
+                      );
+                      toggleTheme();
                     }}
+                    className="flex-1 rounded-xl bg-slate-600/30 dark:bg-slate-700/40 px-3 py-2 text-sm font-medium text-white transition hover:bg-slate-600/50 dark:hover:bg-slate-700/60 ring-1 ring-slate-400/20 dark:ring-slate-500/30"
                   >
                     {isDark ? "☀️ Light" : "🌙 Dark"}
                   </button>
