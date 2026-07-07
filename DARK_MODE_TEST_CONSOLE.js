@@ -56,3 +56,4 @@ console.log("2. Restart dev server: npm run dev");
 console.log("3. Check if html element class is actually changing:");
 console.log("   → Run: document.documentElement.className");
 console.log("   → Should see 'dark' appear/disappear when toggle clicked");
+// 4. Check localStorage: Run: localStorage.getItem('theme')");
